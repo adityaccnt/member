@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class UserHobby extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'hobby_id',
+    ];
+
+    public function hobby()
+    {
+        return $this->belongsTo(Hobby::class);
+    }
+}
